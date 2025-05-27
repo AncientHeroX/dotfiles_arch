@@ -1,0 +1,26 @@
+[user]
+	email = 6415127+AncientHeroX@users.noreply.github.com
+	name = Eduard Gonzalez
+[init]
+	defaultBranch = main
+[alias]
+	dog = log --oneline --graph --decorate --all
+
+[core]
+    pager = delta
+
+[include]
+    path = /home/eduardglez/themes.gitconfig
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    side-by-side = true
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+
+[merge]
+    conflictstyle = zdiff3
+
+    
