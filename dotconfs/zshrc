@@ -26,7 +26,7 @@ export DISPLAY=:0
 export LIBGL_ALWAYS_INDIRECT=0
 
 # Syntax highlight manual pages
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 # CUSTOM ALIAS
 alias ls='eza --classify=always' 
@@ -34,7 +34,7 @@ alias ll='ls -Alh'
 alias la='ls -A'
 alias l='ls -CF'
 alias lt="eza -lT --hyperlink --icons=always --level=3"
-alias bat='batcat --theme="Rose_Pine" --style="plain"'
+alias bat='bat --theme="Rose_Pine" --style="plain"'
 alias cd="z"
 # alias rm='_remove'
 alias tp="trash-put"

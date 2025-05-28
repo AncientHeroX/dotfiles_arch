@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/:
+      glob: true
+      path: dotconfs/config/*
+    ~/:
+      glob: true
+      path: dotconfs/*
+      prefix: '.'
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
