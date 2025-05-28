@@ -23,7 +23,7 @@
 [merge]
     conflictstyle = zdiff3
 
-[url "git@github.com:AncientHeroX"] 
+[url "git@github.com:AncientHeroX/"] 
     insteadOf = "ah:"
 
     

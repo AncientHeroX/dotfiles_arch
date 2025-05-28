@@ -26,7 +26,7 @@ export DISPLAY=:0
 export LIBGL_ALWAYS_INDIRECT=0
 
 # Syntax highlight manual pages
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # CUSTOM ALIAS
 alias ls='eza --classify=always' 
@@ -137,7 +137,6 @@ compinit
 setopt completealiases
 # End of lines added by compinstall
 
-figlet -c $USER"_deb_" | lolcat 
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -152,7 +151,4 @@ function y() {
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+figlet -c $USER"_arch" | lolcat 
