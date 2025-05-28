@@ -25,5 +25,8 @@
 
 [url "git@github.com:AncientHeroX/"] 
     insteadOf = "ah:"
+[url "https://github.com/"]
+    insteadOf = "gh:"
+  
 
     

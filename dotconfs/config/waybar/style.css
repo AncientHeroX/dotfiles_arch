@@ -1,0 +1,93 @@
+@define-color base            #191724;
+@define-color surface         #1f1d2e;
+@define-color overlay         #26233a;
+
+@define-color muted           #6e6a86;
+@define-color subtle          #908caa;
+@define-color text            #e0def4;
+
+@define-color love            #eb6f92;
+@define-color gold            #f6c177;
+@define-color rose            #ebbcba;
+@define-color pine            #31748f;
+@define-color foam            #9ccfd8;
+@define-color iris            #c4a7e7;
+
+@define-color highlightLow    #21202e;
+@define-color highlightMed    #403d52;
+@define-color highlightHigh   #524f67;
+
+* {
+	font-size: 16px;
+	font-family: monospace;
+  border-radius: 10px;
+}
+
+window#waybar {
+	background: @surface;
+	color: @text;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: @base;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: @surface;
+	background: @base;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray {
+	background: @base;
+}
+
+#workspaces button {
+	padding: 0 2px;
+	color: @text;
+}
+#workspaces button.focused {
+	color: @foam;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+	background: @base;
+	border: @base;
+	padding: 0 3px;
+}
+
+#pulseaudio {
+	color: @foam;
+}
+#memory {
+	color: @pine;
+}
+#cpu {
+	color: @iris;
+}
+#battery {
+	color: @gold;
+}
+#disk {
+	color: @love;
+}
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk {
+	padding: 0 10px;
+}
+
