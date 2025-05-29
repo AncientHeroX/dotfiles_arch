@@ -63,3 +63,4 @@ test
 #
 # ##  containers
 !Profiles/*/containers.json
+*.lock

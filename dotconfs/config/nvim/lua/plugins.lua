@@ -36,7 +36,7 @@ return {
   },
   "aznhe21/actions-preview.nvim",
   "theprimeagen/harpoon",
-  "mbubill/undotree",
+  "mbbill/undotree",
   "tpope/vim-fugitive",
   "nvim-treesitter/nvim-treesitter-context",
   "eandrju/cellular-automaton.nvim",
