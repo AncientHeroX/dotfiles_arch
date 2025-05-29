@@ -41,6 +41,7 @@ alias tp="trash-put"
 alias fixmyterminalinput='stty sane'
 alias top='btop'
 alias ts='tmux-sessionizer'
+alias grep='rg'
 
 function makehome()
 {
@@ -114,6 +115,8 @@ export EDITOR="nvim"
 export TERMINAL=wezterm
 export REDIS_JSON_SO=/home/eduardglez/Downloads/RedisJSON/target/release/librejson.so
 export PYTHONPATH=/bin/python3
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 eval "$(oh-my-posh init zsh --config ~/.poshthemes/rose_pine.omp.json)"
 alias chTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
