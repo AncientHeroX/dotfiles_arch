@@ -27,12 +27,9 @@ return {
     opts = {}
   },
   {
-    "shellRaining/hlchunk.nvim",
+    "AncientHeroX/hlchunk.nvim",
+    branch = "fix/indent-empty-treesitter-nodes",
     event = { "BufReadPre", "BufNewFile" },
-  },
-  {
-    "mikavilpas/yazi.nvim",
-    requires = { "folke/snacks.nvim" },
   },
   "aznhe21/actions-preview.nvim",
   "theprimeagen/harpoon",

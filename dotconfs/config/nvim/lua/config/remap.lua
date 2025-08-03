@@ -66,3 +66,6 @@ vim.keymap.set('n', '<F7>', function() require 'dap'.terminate() end, { desc = "
 vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
   require('dap.ui.widgets').hover()
 end)
+
+-- definitions
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to function definition"})

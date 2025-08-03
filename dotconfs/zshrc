@@ -117,6 +117,7 @@ export REDIS_JSON_SO=/home/eduardglez/Downloads/RedisJSON/target/release/librejs
 export PYTHONPATH=/bin/python3
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt5ct
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 eval "$(oh-my-posh init zsh --config ~/.poshthemes/rose_pine.omp.json)"
 alias chTheme='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
@@ -155,3 +156,4 @@ eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
 figlet -c $USER"_arch" | lolcat 
+fastfetch

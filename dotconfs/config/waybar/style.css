@@ -20,12 +20,12 @@
 * {
 	font-size: 16px;
 	font-family: monospace;
-  border-radius: 10px;
 }
 
 window#waybar {
 	background: @surface;
 	color: @text;
+  border-radius: 10px;
 }
 
 #custom-right-arrow-dark,

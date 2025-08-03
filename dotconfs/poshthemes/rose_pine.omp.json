@@ -83,7 +83,15 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "[<#ffffff>\uea6c</> Error, check your command]",
+          "type": "python",
+          "foreground": "#9ccfd8",
+          "template": "[Py: {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }} Env - {{ .Venv }} {{ end }}{{ .Full }}{{ end }}]"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "[<#ffffff>\uea6c</> {{ .Code }}: Error, check your command]",
           "foreground": "#eb6f92",
           "type": "status",
           "style": "powerline"

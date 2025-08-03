@@ -9,18 +9,13 @@
 		"hyprland/workspaces",
 		"custom/right-arrow-dark"
 	],
-	"modules-center": [
-		"custom/left-arrow-dark",
-		"clock#1",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"clock#2",
-		"custom/right-arrow-dark",
-		"custom/right-arrow-light",
-		"clock#3",
-		"custom/right-arrow-dark"
-	],
+  "modules-center": [
+		"network",
+  ],
 	"modules-right": [
+		"custom/left-arrow-dark",
+		"tray",
+		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"pulseaudio",
 		"custom/left-arrow-light",
@@ -28,16 +23,20 @@
 		"memory",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"cpu",
+		"temperature",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"battery",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"disk",
+		"clock#1",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"tray"
+		"clock#3",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#2",
+		"custom/right-arrow-dark"
 	],
 
 	"custom/left-arrow-dark": {
@@ -121,5 +120,25 @@
 	},
 	"tray": {
 		"icon-size": 20
-	}
+	},
+  "network": {
+    "interval": 5,
+    "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
+    "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+    "format-disconnected": "⚠  Disconnected",
+    "tooltip-format": "{ifname}: {ipaddr}"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "interval": 5,
+    "format": "{icon}  {temperatureC}°C",
+    "format-icons": [
+      "", // Icon: temperature-empty
+      "", // Icon: temperature-quarter
+      "", // Icon: temperature-half
+      "", // Icon: temperature-three-quarters
+      ""  // Icon: temperature-full
+    ],
+    "tooltip": true
+  },
 }
