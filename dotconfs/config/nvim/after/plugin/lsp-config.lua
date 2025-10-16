@@ -2,6 +2,16 @@ local lsp_config = require("lspconfig")
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+require("mason-lspconfig").setup({
+  automatic_enable ={
+    exclude = {
+      "ts_ls"
+    }
+  }
+})
+
+lsp_config.emmet_ls.setup({})
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-group', {}),
   callback = function(args)
@@ -48,3 +58,34 @@ lsp_config.rust_analyzer.setup({
     },
   },
 })
+lsp_config.denols.setup {
+  on_attach = on_attach,
+  root_dir = lsp_config.util.root_pattern("deno.json", "deno.jsonc"),
+}
+lsp_config.ts_ls.setup {
+  on_attach = on_attach,
+  root_dir = function(fname) 
+    if lsp_config.util.root_pattern('deno.json', 'deno.jsonc')(fname) then
+      return nil
+    end
+    return lsp_config.util.root_pattern('package.json', 'tsconfig.json', '.git')(fname)
+  end,
+  single_file_support = false
+}
+
+
+vim.diagnostic.config({
+  virtual_text = false,
+})
+
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+
+vim.api.nvim_create_autocmd({ 'CursorHold','InsertLeave' }, {pattern = nil, callback = function() 
+  	local opts = {
+		focusable = false,
+		scope = 'cursor',
+		close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter' },
+	}
+	vim.diagnostic.open_float(nil, opts)
+end})

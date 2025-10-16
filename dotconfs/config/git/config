@@ -4,7 +4,7 @@
 [init]
 	defaultBranch = main
 [alias]
-	dog = log --oneline --graph --decorate --all
+	dog = log --oneline --graph --decorate --all -n 30
 
 [core]
     pager = delta

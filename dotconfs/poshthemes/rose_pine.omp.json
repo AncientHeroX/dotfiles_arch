@@ -51,7 +51,7 @@
         },
         {
           "properties": {
-            "cache_duration": "none",
+            "cache_duration": "5s",
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true

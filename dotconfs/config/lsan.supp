@@ -1,0 +1,6 @@
+leak:libc.so
+leak:libdbus-1.so
+leak:libstdc++.so
+leak:libgcc_s.so
+
+

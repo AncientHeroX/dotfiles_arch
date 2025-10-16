@@ -52,16 +52,6 @@ vim.keymap.set('n', '<F5>', function()
     require 'dap'.continue()
 end, { desc = "Start debug" })
 
-vim.keymap.set('n', '<F1>', function() require'dap'.step_over() end, { desc= "Step Over" });
-vim.keymap.set('n', '<F2>', function() require'dap'.step_into() end, { desc= "Step Into" });
-vim.keymap.set('n', '<F4>', function() require 'dap'.toggle_breakpoint() end, { desc = "Toggle a breakpoint" })
-vim.keymap.set('n', '<F6>', function()
-    local buildcmd = os.getenv("BUILD_CMD")
-    if buildcmd ~= nil then
-        vim.cmd(buildcmd)
-    end
-end, { desc = "Run build command" })
-vim.keymap.set('n', '<F7>', function() require 'dap'.terminate() end, { desc = "Terminate" })
 
 vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
   require('dap.ui.widgets').hover()
@@ -69,3 +59,25 @@ end)
 
 -- definitions
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to function definition"})
+
+vim.keymap.set('n', '<leader>db', "<cmd> DapToggleBreakpoint <CR>")
+vim.keymap.set('n', '<leader>dr', "<cmd> DapContinue <CR>")
+vim.keymap.set('n', '<leader>dm', function()
+    local buildcmd = os.getenv("BUILD_CMD")
+    if buildcmd ~= nil then
+      vim.o.mopt = "wait:0,history:500"
+      vim.cmd(buildcmd)
+      vim.o.mopt = "hit-enter,history:500" 
+    end
+end, { desc = "Run build command" })
+vim.keymap.set('n', '<F1>', function() require'dap'.step_over() end, { desc= "Step Over" });
+vim.keymap.set('n', '<F2>', function() require'dap'.step_into() end, { desc= "Step Into" });
+vim.keymap.set('n', '<F4>', function() require 'dap'.toggle_breakpoint() end, { desc = "Toggle a breakpoint" })
+vim.keymap.set('n', '<F7>', function() require 'dap'.terminate() end, { desc = "Terminate" })
+
+vim.keymap.set('n', '<leader>xx', function() 
+  require("telescope.builtin").diagnostics({
+    severity = vim.diagnostic.severity.ERROR,
+  })
+end )
+

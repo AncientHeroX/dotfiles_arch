@@ -13,7 +13,9 @@ return {
     font_size = 9,
     enable_tab_bar = false,
     window_decorations = "NONE",
-    front_end = "WebGpu",
+    front_end = "OpenGL",
     max_fps = 120,
+    harfbuzz_features = {},
+    enable_wayland = true,
     warn_about_missing_glyphs = false,
 }
