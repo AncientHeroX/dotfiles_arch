@@ -44,6 +44,8 @@ ahead = '${count}'
 diverged = '⇕${ahead_count}${behind_count}'
 behind = '${count}'
 style = "fg:#ea9a97"
+ignore_submodules = true
+use_git_executable = true
 
 [python]
 format = '\[[Py: $venv $version]($style)\]'
